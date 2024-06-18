@@ -22,9 +22,9 @@ class RegistrationForm(FlaskForm):
 # Создание класса LoginForm
 class LoginForm(FlaskForm):
     username = StringField('Логин пользователя', validators=[DataRequired()])
-    password = PasswordField('Password', validators=[DataRequired()])
+    password = PasswordField('Пароль', validators=[DataRequired()])
     remember = BooleanField('Запомнить меня')
-    submit = SubmitField('Войти с логином')
+    submit = SubmitField('Войти')
 
 # Создание класса UpdateAccountForm
 class UpdateAccountForm(FlaskForm):

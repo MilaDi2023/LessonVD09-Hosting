@@ -1,26 +1,29 @@
 {% extends "base.html" %}
 
 {% block title %}
-    <h1>Обновление аккаунта</h1>
+    Обновление аккаунта
 {% endblock %}
 
 {% block content %}
-    <form method="POST" action="{{ url_for('update_account') }}">
-        {{ form.hidden_tag() }}
-        <div>
-            {{ form.username.label }}<br>
-            {{ form.username(size=32) }}
-        </div>
-        <div>
-            {{ form.password.label }}<br>
-            {{ form.password(size=32) }}
-        </div>
-        <div>
-            {{ form.confirm_password.label }}<br>
-            {{ form.confirm_password(size=32) }}
-        </div>
-        <div>
-            {{ form.submit() }}
-        </div>
-    </form>
+    <div class="container mt-5">
+        <h1 class="text-center">Обновление аккаунта</h1>
+        <form method="POST" action="{{ url_for('update_account') }}" class="mt-4">
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                {{ form.username.label(class="form-label") }}
+                {{ form.username(class="form-control", size=32) }}
+            </div>
+            <div class="form-group">
+                {{ form.password.label(class="form-label") }}
+                {{ form.password(class="form-control", size=32) }}
+            </div>
+            <div class="form-group">
+                {{ form.confirm_password.label(class="form-label") }}
+                {{ form.confirm_password(class="form-control", size=32) }}
+            </div>
+            <div class="form-group text-center">
+                {{ form.submit(class="btn btn-primary") }}
+            </div>
+        </form>
+    </div>
 {% endblock %}
